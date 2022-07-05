@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>iDashboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -13,22 +21,27 @@
     </div>
     <hr>
     <div class="dashboard">
-        <div class="box-1">
+        <div class="box-1 box">
             <h4 style="padding-left: 20px;">Clock</h4>
-            <h1 id="time" style="text-align:center; font-size: 50px;"></h1>
+            <h1 id="time" class="time" style="text-align:center; font-size: 40px;"></h1>
             <h3 id="date" style="text-align:center;"></h1>
         </div>
-        <div class="box-2">
-            <h4 style="padding-left: 20px;">Weather</h4>
-            
+        <div class="box-2 box">
+            <h4 class="title">Weather</h4>
+            <!-- the DIV that will contain the widget -->
+        </div>
+        <div class="box-3 box">
+            <iframe src="https://calendar.google.com/calendar/embed?src=en.vietnamese%23holiday%40group.v.calendar.google.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
 </body>
 <script>
     var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes();
-    document.getElementById("time").innerHTML = time;
-    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     document.getElementById("date").innerHTML = date;
+
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+document.getElementById("time").innerHTML = time;
 </script>
 </html>
